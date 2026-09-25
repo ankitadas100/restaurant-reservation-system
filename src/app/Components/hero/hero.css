@@ -1,0 +1,130 @@
+.hero {
+  width: 100%;
+  height: 700px;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  background-image: url("/image.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  overflow: hidden;
+}
+
+
+.hero-content {
+  position: absolute;
+
+  left: 7%;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 42%;
+
+  z-index: 2;
+}
+
+
+/* INDIAN RESTAURANT */
+
+.hero-subtitle {
+  margin: 0 0 25px;
+
+  color: #ff9d32;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 56px;
+
+  font-weight: 700;
+
+  line-height: 1.05;
+
+  letter-spacing: 3px;
+}
+
+
+/* MAIN HEADING */
+
+.para {
+  margin: 0;
+
+  color: #f5ead7;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 28px;
+
+  line-height: 1.15;
+
+  font-weight: 600;
+
+  letter-spacing: 1px;
+}
+
+
+/* DESCRIPTION */
+
+.hero-description {
+  width: 90%;
+
+  margin: 30px 0 0;
+
+  color: #f0f0e8;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+
+/* BUTTON */
+
+.hero-book-btn {
+  margin-top: 32px;
+
+  padding: 14px 28px;
+
+  border: none;
+
+  border-radius: 5px;
+
+  background: #ff9d32;
+
+  color: #172b26;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 0 10px rgba(255, 157, 50, 0.45),
+    0 0 25px rgba(255, 157, 50, 0.18);
+
+  transition: all 0.3s ease;
+}
+
+
+.hero-book-btn:hover {
+  background: #ffb45c;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 0 15px rgba(255, 180, 92, 0.7),
+    0 0 30px rgba(255, 157, 50, 0.3);
+}

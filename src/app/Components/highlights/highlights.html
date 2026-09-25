@@ -1,0 +1,36 @@
+<section class="highlights">
+
+  <div class="highlights-heading">
+
+    <p class="highlights-subtitle">
+      TABLEFLOW EXPERIENCE
+    </p>
+
+    <h2>
+      Made For Memorable
+      <br>
+      Dining
+    </h2>
+
+  </div>
+
+
+  <div class="highlight-cards">
+
+    @for (item of highlights; track item.title) {
+
+      <div class="highlight-card">
+
+        <h3>{{ item.number }}</h3>
+
+        <h4>{{ item.title }}</h4>
+
+        <p>{{ item.description }}</p>
+
+      </div>
+
+    }
+
+  </div>
+
+</section>

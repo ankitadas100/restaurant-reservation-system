@@ -1,0 +1,211 @@
+.about {
+  width: 100%;
+  min-height: 560px;
+
+  padding: 90px 8%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 80px;
+
+  background: #062f2f;
+
+  box-sizing: border-box;
+}
+
+
+/* IMAGE */
+
+.about-image {
+  width: 48%;
+
+  flex-shrink: 0;
+}
+
+
+  .about-image img {
+  width: 100%;
+  height: 450px;
+  display: block;
+  object-fit: cover;
+  object-position:left  center;
+  border-radius: 8px;
+}
+
+
+
+/* CONTENT */
+
+.about-content {
+  width: 45%;
+
+  flex-shrink: 0;
+
+  color: #f5ead7;
+}
+
+
+/* SUBTITLE */
+
+.about-subtitle {
+  margin: 0 0 16px;
+
+  color: #ff9d32;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+}
+
+
+/* MAIN HEADING */
+
+.about-content h2 {
+  margin: 0;
+
+  color: #f5ead7;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 48px;
+
+  line-height: 1.12;
+
+  font-weight: 600;
+
+  letter-spacing: 0.3px;
+}
+
+
+/* DESCRIPTION */
+
+.about-description {
+  max-width: 600px;
+
+  margin: 26px 0 0;
+
+  color: #d3ddd7;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+
+/* FEATURES */
+
+.about-features {
+  margin-top: 30px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 16px;
+}
+
+
+/* EACH FEATURE */
+
+.feature-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  color: #e8e2d7;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 14px;
+}
+
+
+/* ORANGE CHECK */
+
+.feature-icon {
+  width: 22px;
+  height: 22px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(255, 157, 50, 0.12);
+
+  color: #ff9d32;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+
+/* HOVER */
+
+.feature-item:hover .feature-icon {
+  background: #ff9d32;
+
+  color: #172b26;
+}
+
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+  .about {
+    padding: 70px 6%;
+
+    flex-direction: column;
+
+    gap: 45px;
+  }
+
+  .about-image {
+    width: 100%;
+  }
+
+  .about-image img {
+    height: 400px;
+  }
+
+  .about-content {
+    width: 100%;
+  }
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .about {
+    padding: 55px 5%;
+  }
+
+  .about-image img {
+    height: 300px;
+  }
+
+  .about-content h2 {
+    font-size: 34px;
+  }
+
+  .about-description {
+    font-size: 13px;
+  }
+}

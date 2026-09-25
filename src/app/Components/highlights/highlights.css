@@ -1,0 +1,142 @@
+.highlights {
+  width: 100%;
+  padding: 90px 8%;
+
+  background: #023e3ef5;
+
+  box-sizing: border-box;
+
+  text-align: center;
+}
+
+
+/* HEADING */
+
+.highlights-subtitle {
+  margin: 0 0 15px;
+
+  color: #ff9d32;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+.highlights-heading h2 {
+  margin: 0;
+
+  color: #f5ead7;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 46px;
+
+  line-height: 1.15;
+
+  font-weight: 600;
+}
+
+
+/* CARDS */
+
+.highlight-cards {
+  margin-top: 55px;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 25px;
+}
+
+
+/* CARD */
+
+.highlight-card {
+  padding: 35px 25px;
+
+  background: rgba(255, 255, 255, 0.07);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  border-radius: 10px;
+
+  backdrop-filter: blur(8px);
+
+  transition: all 0.3s ease;
+}
+
+
+/* NUMBER */
+
+.highlight-card h3 {
+  margin: 0;
+
+  color: #ff9d32;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 42px;
+
+  font-weight: 600;
+}
+
+
+/* TITLE */
+
+.highlight-card h4 {
+  margin: 12px 0 0;
+
+  color: #f5ead7;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 16px;
+
+  font-weight: 600;
+}
+
+
+/* DESCRIPTION */
+
+.highlight-card p {
+  margin: 12px 0 0;
+
+  color: #cbd6d1;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+
+/* HOVER */
+
+.highlight-card:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(255, 157, 50, 0.4);
+
+  background: rgba(255, 255, 255, 0.10);
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+
+  .highlight-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .highlights-heading h2 {
+    font-size: 38px;
+  }
+
+}
