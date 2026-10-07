@@ -11,7 +11,6 @@
 }
 
 
-/* MAIN CONTAINER */
 
 .footer-container {
   display: grid;
@@ -26,7 +25,7 @@
 }
 
 
-/* BRAND */
+
 
 .footer-brand {
   max-width: 320px;
@@ -69,7 +68,7 @@
 }
 
 
-/* COLUMNS */
+
 
 .footer-column {
   display: flex;
@@ -119,7 +118,7 @@
 }
 
 
-/* BOTTOM */
+
 
 .footer-bottom {
   max-width: 1400px;
@@ -148,7 +147,7 @@
 }
 
 
-/* TABLET */
+
 
 @media (max-width: 900px) {
 
@@ -161,7 +160,7 @@
 }
 
 
-/* MOBILE */
+
 
 @media (max-width: 600px) {
 

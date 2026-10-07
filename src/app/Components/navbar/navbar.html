@@ -6,13 +6,20 @@
   </div>
 
   <div class="nav-links">
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/reservation">Reservation</a>
-    <a href="/tables">Tables</a>
+
+    <a routerLink="/">Home</a>
+
+    <a routerLink="/" fragment="about">About</a>
+
+    <a routerLink="/reservation">Reservation</a>
+
+    <a routerLink="/tables">Tables</a>
+
   </div>
 
-  <button class="reserve-btn">
+  <button
+    class="btn"
+    routerLink="/reservation">
     Reserve Now
   </button>
 
