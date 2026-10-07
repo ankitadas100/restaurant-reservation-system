@@ -1,57 +1,80 @@
+
 .reservation-page {
   min-height: 100vh;
-  padding: 70px 8%;
+  padding: 80px 20px;
   background: #062f2f;
   color: #f5ead7;
 }
 
-
+/* HEADER */
 
 .reservation-header {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 45px;
 }
 
 .reservation-header p {
+  margin-bottom: 10px;
   color: #ff9d32;
+  font-family: Arial, sans-serif;
   font-size: 13px;
-  letter-spacing: 3px;
   font-weight: 700;
+  letter-spacing: 3px;
 }
 
 .reservation-header h1 {
-  margin: 10px 0;
-  font-size: 42px;
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 44px;
+  font-weight: 600;
 }
 
 .reservation-header span {
+  display: block;
+  margin-top: 12px;
   color: #cbd5d0;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
 }
 
 
+/* FORM CARD */
 
 .reservation-card {
-  max-width: 1000px;
-  margin: 0 auto 35px;
-  padding: 35px;
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+  padding: 40px;
+
+  background: #083838;
+
   border: 1px solid rgba(245, 234, 215, 0.12);
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.04);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+
+  box-sizing: border-box;
 }
 
 .reservation-card h2 {
-  margin-bottom: 25px;
-  color: #ff9d32;
+  margin: 0 0 30px;
+
+  color: #f5ead7;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 25px;
+
+  border-left: 3px solid #ff9d32;
+  padding-left: 12px;
 }
 
 
-
+/* FORM GRID */
 
 .form-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 22px;
+  gap: 25px;
 }
 
 .form-group {
@@ -61,127 +84,82 @@
 }
 
 .form-group label {
+  color: #f5ead7;
+  font-family: Arial, sans-serif;
   font-size: 13px;
   font-weight: 600;
 }
 
 .form-group input,
 .form-group textarea {
-  padding: 13px;
+  width: 100%;
+  padding: 13px 15px;
+
+  box-sizing: border-box;
+
+  background: #062f2f;
+
   border: 1px solid rgba(245, 234, 215, 0.18);
   border-radius: 6px;
-  outline: none;
-  background: #0b3b3b;
+
   color: #f5ead7;
+
+  outline: none;
+
+  font-size: 14px;
+
+  transition: 0.3s;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #78918d;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
   border-color: #ff9d32;
+  box-shadow: 0 0 0 2px rgba(255, 157, 50, 0.08);
 }
+
+
+/* SPECIAL REQUEST */
 
 .full-width {
-  margin-top: 22px;
+  margin-top: 25px;
 }
 
-textarea {
+.form-group textarea {
   min-height: 100px;
   resize: vertical;
 }
 
 
-
-
-.menu-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
-}
-
-.menu-item {
-  padding: 22px;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.05);
-  transition: 0.3s;
-}
-
-.menu-item:hover {
-  transform: translateY(-3px);
-  border-color: #ff9d32;
-}
-
-.menu-item h3 {
-  margin-bottom: 8px;
-}
-
-.menu-item p {
-  color: #cbd5d0;
-  font-size: 13px;
-  line-height: 1.5;
-}
-
-.menu-item span {
-  display: block;
-  margin-top: 12px;
-  color: #ff9d32;
-  font-weight: 700;
-}
-
-
-
-
-.table-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
-}
-
-.table {
-  padding: 20px;
-  border-radius: 8px;
-  border: 1px solid transparent;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.table small {
-  display: block;
-  margin-top: 6px;
-  font-weight: 400;
-}
-
-.available {
-  background: rgba(255, 157, 50, 0.12);
-  color: #f5ead7;
-  border-color: #ff9d32;
-}
-
-.available:hover {
-  background: #ff9d32;
-  color: #172b26;
-}
-
-.reserved {
-  background: rgba(150, 150, 150, 0.12);
-  color: #777;
-  cursor: not-allowed;
-}
-
-
+/* BUTTON */
 
 .confirm-section {
+  margin-top: 35px;
   text-align: center;
-  margin-top: 40px;
 }
 
 .confirm-btn {
-  padding: 14px 30px;
+  padding: 14px 32px;
+
   border: none;
   border-radius: 6px;
+
   background: #ff9d32;
   color: #172b26;
+
+  font-size: 13px;
   font-weight: 700;
+
   cursor: pointer;
+
+  box-shadow:
+    0 0 10px rgba(255, 157, 50, 0.45),
+    0 0 25px rgba(255, 157, 50, 0.18);
+
   transition: 0.3s;
 }
 
@@ -191,24 +169,23 @@ textarea {
 }
 
 
+/* RESPONSIVE */
 
-
-@media (max-width: 768px) {
+@media (max-width: 700px) {
 
   .reservation-page {
-    padding: 50px 5%;
-  }
-
-  .form-grid,
-  .menu-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .table-grid {
-    grid-template-columns: repeat(2, 1fr);
+    padding: 55px 20px;
   }
 
   .reservation-header h1 {
-    font-size: 32px;
+    font-size: 34px;
+  }
+
+  .reservation-card {
+    padding: 25px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
   }
 }
