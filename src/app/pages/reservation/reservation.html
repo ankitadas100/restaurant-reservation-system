@@ -1,14 +1,16 @@
+
 <section class="reservation-page">
 
   <!-- Header -->
   <div class="reservation-header">
     <p>TABLEFLOW</p>
     <h1>Reserve Your Table</h1>
-    <span>Book your table and enjoy an unforgettable dining experience.</span>
+    <span>
+      Book your table and enjoy an unforgettable dining experience.
+    </span>
   </div>
 
-
-  <!-- Reservation Form -->
+  <!-- Guest Information -->
   <div class="reservation-card">
 
     <h2>Guest Information</h2>
@@ -65,19 +67,70 @@
 
     <div class="form-group full-width">
       <label>Special Request</label>
-
       <textarea
-        placeholder="Any special request?">
+        placeholder="Any special request?"
+        [(ngModel)]="specialRequest">
       </textarea>
     </div>
 
   </div>
 
+  <!-- Menu Selection -->
+  <div class="reservation-card menu-section">
 
-  <!-- Confirm -->
+    <h2>Select Your Menu</h2>
+    <p class="section-description">
+      Choose your favourite dishes for your dining experience.
+    </p>
+
+    <div class="menu-grid">
+
+      @for (item of menuItems; track item.name) {
+        <button
+          type="button"
+          class="menu-card"
+          [class.selected]="selectedMenu.includes(item.name)"
+          (click)="toggleMenu(item.name)">
+
+          <span class="food-icon">
+            @if (item.name === 'Paneer Tikka') {
+              🥘
+            } @else if (item.name === 'Butter Chicken') {
+              🍛
+            } @else if (item.name === 'Biryani') {
+              🍚
+            } @else {
+              🍮
+            }
+          </span>
+
+          <span class="food-name">{{ item.name }}</span>
+          <span class="food-price">₹{{ item.price }}</span>
+
+          <span class="select-label">
+            @if (selectedMenu.includes(item.name)) {
+              ✓ Selected
+            } @else {
+              + Select
+            }
+          </span>
+
+        </button>
+      }
+
+    </div>
+
+    <p class="selection-summary">
+      {{ selectedMenu.length }} dish(es) selected
+    </p>
+
+  </div>
+
+  <!-- Confirmation -->
   <div class="confirm-section">
 
     <button
+      type="button"
       class="confirm-btn"
       (click)="confirmReservation()">
       Confirm Reservation
