@@ -1,9 +1,17 @@
 import { Component } from '@angular/core';
 
 @Component({
-  imports: [],
   selector: 'app-tables',
-  styleUrl: './tables.css',
+  imports: [],
   templateUrl: './tables.html',
+  styleUrl: './tables.css'
 })
-export class Tables {}
+export class Tables {
+
+  selectedTable = '';
+
+  selectTable(tableNumber: string) {
+    this.selectedTable = tableNumber;
+  }
+
+}

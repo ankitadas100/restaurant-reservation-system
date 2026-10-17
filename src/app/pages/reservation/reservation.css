@@ -189,3 +189,165 @@
     grid-template-columns: 1fr;
   }
 }
+/* =========================
+   TABLE SELECTION
+========================= */
+
+.table-section {
+  margin-top: 30px;
+}
+
+.table-description {
+  margin: -12px 0 25px;
+  color: #9fb1ad;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+}
+
+.table-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+/* Table Card */
+
+.table-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  width: 100%;
+  padding: 20px;
+
+  border: 1px solid rgba(245, 234, 215, 0.13);
+  border-radius: 9px;
+
+  background: #062f2f;
+  color: #f5ead7;
+
+  text-align: left;
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+/* Table Number */
+
+.table-number {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(255, 157, 50, 0.12);
+  border: 1px solid #ff9d32;
+
+  color: #ff9d32;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  font-weight: 700;
+
+  flex-shrink: 0;
+}
+
+/* Table Information */
+
+.table-info h3 {
+  margin: 0 0 5px;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+}
+
+.table-info span {
+  color: #9fb1ad;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+}
+
+/* Available Hover */
+
+.table-card.available:hover {
+  border-color: #ff9d32;
+  background: rgba(255, 157, 50, 0.08);
+  transform: translateY(-3px);
+}
+
+.table-card.available:hover .table-number {
+  background: #ff9d32;
+  color: #172b26;
+}
+
+/* Reserved */
+
+.table-card.reserved {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.table-card.reserved .table-number {
+  border-color: #667875;
+  background: rgba(120, 130, 128, 0.08);
+  color: #778582;
+}
+
+/* Legend */
+
+.table-legend {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+
+  margin-top: 30px;
+  padding-top: 20px;
+
+  border-top: 1px solid rgba(245, 234, 215, 0.08);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #aebdb9;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+}
+
+.legend-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+.available-dot {
+  background: #ff9d32;
+}
+
+.reserved-dot {
+  background: #687773;
+}
+
+.selected-dot {
+  background: #f5ead7;
+}
+
+/* Responsive */
+
+@media (max-width: 700px) {
+
+  .table-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .table-legend {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+}

@@ -1,1 +1,129 @@
-<p>tables works!</p>
+<section class="tables-page">
+
+  <!-- Page Header -->
+  <div class="tables-header">
+
+    <p>TABLEFLOW</p>
+
+    <h1>Find Your Perfect Table</h1>
+
+    <span>
+      Choose an available table for your dining experience.
+    </span>
+
+  </div>
+
+
+  <!-- Tables Card -->
+  <div class="tables-card">
+
+    <div class="section-title">
+
+      <h2>Select Your Table</h2>
+
+      <p>
+        Choose a table according to your group size.
+      </p>
+
+    </div>
+
+
+    <!-- Table Grid -->
+    <div class="table-grid">
+
+      <!-- Table 01 -->
+      <button
+        class="table-card available"
+        [class.selected]="selectedTable === '01'"
+        (click)="selectTable('01')">
+
+        <div class="table-circle">
+          01
+        </div>
+
+        <div class="table-details">
+          <h3>Table 01</h3>
+          <span>2 Seats</span>
+        </div>
+
+      </button>
+
+
+      <!-- Table 02 -->
+      <button
+        class="table-card available"
+        [class.selected]="selectedTable === '02'"
+        (click)="selectTable('02')">
+
+        <div class="table-circle">
+          02
+        </div>
+
+        <div class="table-details">
+          <h3>Table 02</h3>
+          <span>4 Seats</span>
+        </div>
+
+      </button>
+
+
+      <!-- Table 03 -->
+      <button
+        class="table-card reserved"
+        disabled>
+
+        <div class="table-circle">
+          03
+        </div>
+
+        <div class="table-details">
+          <h3>Table 03</h3>
+          <span>Reserved</span>
+        </div>
+
+      </button>
+
+
+      <!-- Table 04 -->
+      <button
+        class="table-card available"
+        [class.selected]="selectedTable === '04'"
+        (click)="selectTable('04')">
+
+        <div class="table-circle">
+          04
+        </div>
+
+        <div class="table-details">
+          <h3>Table 04</h3>
+          <span>6 Seats</span>
+        </div>
+
+      </button>
+
+    </div>
+
+
+    <!-- Table Status -->
+    <div class="table-status">
+
+      <div class="status-item">
+        <span class="status-dot available-dot"></span>
+        <span>Available</span>
+      </div>
+
+      <div class="status-item">
+        <span class="status-dot selected-dot"></span>
+        <span>Selected</span>
+      </div>
+
+      <div class="status-item">
+        <span class="status-dot reserved-dot"></span>
+        <span>Reserved</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
