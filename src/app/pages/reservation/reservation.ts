@@ -1,6 +1,7 @@
 
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { TableSelection } from '../../services/table-selection';
 
 @Component({
   selector: 'app-reservation',
@@ -9,6 +10,8 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './reservation.css'
 })
 export class Reservation {
+
+  constructor(private tableSelection: TableSelection) {}
 
   name = '';
   email = '';
@@ -27,6 +30,12 @@ export class Reservation {
     { name: 'Gulab Jamun', price: 100 }
   ];
 
+  // Get the table selected on the separate Tables page
+  get selectedTable(): string {
+    return this.tableSelection.selectedTable;
+  }
+
+  // Select or deselect menu items
   toggleMenu(itemName: string) {
     if (this.selectedMenu.includes(itemName)) {
       this.selectedMenu = this.selectedMenu.filter(
@@ -36,23 +45,11 @@ export class Reservation {
       this.selectedMenu.push(itemName);
     }
   }
-  
-selectedTable = '';
 
-tables = [
-  { number: '01', seats: 2, reserved: false },
-  { number: '02', seats: 4, reserved: false },
-  { number: '03', seats: 0, reserved: true },
-  { number: '04', seats: 6, reserved: false }
-];
-
-selectTable(tableNumber: string) {
-  this.selectedTable = tableNumber;
-}
-
-
+  // Confirm reservation
   confirmReservation() {
-    console.log('Reservation Details:', {
+
+    const reservationDetails = {
       name: this.name,
       email: this.email,
       phone: this.phone,
@@ -60,12 +57,16 @@ selectTable(tableNumber: string) {
       date: this.date,
       time: this.time,
       specialRequest: this.specialRequest,
-      selectedMenu: this.selectedMenu
-    });
+      selectedMenu: this.selectedMenu,
+      selectedTable: this.selectedTable
+    };
+
+    console.log('Reservation Details:', reservationDetails);
 
     alert(
-  `Reservation confirmed for ${this.name}!\n` +
-  `Selected Table: ${this.selectedTable || 'Not selected'}`
-);
+      `Reservation confirmed for ${this.name}!\n` +
+      `Selected Table: ${this.selectedTable || 'Not selected'}`
+    );
   }
+
 }
