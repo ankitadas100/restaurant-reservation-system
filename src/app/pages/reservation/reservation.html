@@ -125,6 +125,66 @@
     </p>
 
   </div>
+  
+<!-- Table Selection -->
+<div class="reservation-card table-selection-section">
+
+  <h2>Select Your Table</h2>
+
+  <p class="section-description">
+    Choose a table according to your group size.
+  </p>
+
+  <div class="table-grid">
+
+    @for (table of tables; track table.number) {
+      <button
+        type="button"
+        class="table-card"
+        [class.selected]="selectedTable === table.number"
+        [class.reserved]="table.reserved"
+        [disabled]="table.reserved"
+        (click)="selectTable(table.number)">
+
+        <span class="table-circle">{{ table.number }}</span>
+
+        <span class="table-name">
+          Table {{ table.number }}
+        </span>
+
+        <span class="table-seats">
+          @if (table.reserved) {
+            Reserved
+          } @else {
+            {{ table.seats }} Seats
+          }
+        </span>
+
+        <span class="table-choice">
+          @if (table.reserved) {
+            Unavailable
+          } @else if (selectedTable === table.number) {
+            ✓ Selected
+          } @else {
+            + Select
+          }
+        </span>
+
+      </button>
+    }
+
+  </div>
+
+  <p class="selection-summary">
+    @if (selectedTable) {
+      Selected Table: {{ selectedTable }}
+    } @else {
+      Please select a table.
+    }
+  </p>
+
+</div>
+
 
   <!-- Confirmation -->
   <div class="confirm-section">

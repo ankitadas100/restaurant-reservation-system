@@ -36,6 +36,20 @@ export class Reservation {
       this.selectedMenu.push(itemName);
     }
   }
+  
+selectedTable = '';
+
+tables = [
+  { number: '01', seats: 2, reserved: false },
+  { number: '02', seats: 4, reserved: false },
+  { number: '03', seats: 0, reserved: true },
+  { number: '04', seats: 6, reserved: false }
+];
+
+selectTable(tableNumber: string) {
+  this.selectedTable = tableNumber;
+}
+
 
   confirmReservation() {
     console.log('Reservation Details:', {
@@ -49,6 +63,9 @@ export class Reservation {
       selectedMenu: this.selectedMenu
     });
 
-    alert(`Reservation confirmed for ${this.name}!`);
+    alert(
+  `Reservation confirmed for ${this.name}!\n` +
+  `Selected Table: ${this.selectedTable || 'Not selected'}`
+);
   }
 }
