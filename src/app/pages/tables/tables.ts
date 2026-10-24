@@ -1,4 +1,3 @@
-
 import { Component } from '@angular/core';
 import { TableSelection } from '../../services/table-selection';
 
@@ -9,7 +8,6 @@ import { TableSelection } from '../../services/table-selection';
   styleUrl: './tables.css'
 })
 export class Tables {
-
   selectedTable = '';
 
   constructor(private tableSelection: TableSelection) {}
@@ -18,5 +16,4 @@ export class Tables {
     this.selectedTable = tableNumber;
     this.tableSelection.selectTable(tableNumber);
   }
-
 }

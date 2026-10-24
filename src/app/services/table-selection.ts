@@ -1,4 +1,3 @@
-
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -9,9 +8,5 @@ export class TableSelection {
 
   selectTable(tableNumber: string) {
     this.selectedTable = tableNumber;
-  }
-
-  clearSelection() {
-    this.selectedTable = '';
   }
 }
