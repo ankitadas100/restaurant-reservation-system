@@ -49,25 +49,81 @@ export class Reservation {
 
  
   confirmReservation() {
-
-    const reservationDetails = {
-      name: this.name,
-      email: this.email,
-      phone: this.phone,
-      guests: this.guests,
-      date: this.date,
-      time: this.time,
-      specialRequest: this.specialRequest,
-      selectedMenu: this.selectedMenu,
-      selectedTable: this.selectedTable
-    };
-
-    console.log('Reservation Details:', reservationDetails);
-
-    alert(
-      `Reservation confirmed for ${this.name}!\n` +
-      `Selected Table: ${this.selectedTable || 'Not selected'}`
-    );
+  // Check required fields
+  if (
+    !this.name.trim() ||
+    !this.email.trim() ||
+    !this.phone.trim() ||
+    !this.date ||
+    !this.time
+  ) {
+    alert('Please fill in all required fields.');
+    return;
   }
 
+  // Validate email
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!emailRegex.test(this.email)) {
+    alert('Please enter a valid email address.');
+    return;
+  }
+
+  // Validate Indian mobile number
+  const phoneRegex = /^[6-9]\d{9}$/;
+
+  if (!phoneRegex.test(this.phone.trim())) {
+    alert('Please enter a valid 10-digit mobile number.');
+    return;
+  }
+
+  // Validate number of guests
+  if (!Number.isInteger(Number(this.guests)) || Number(this.guests) < 1) {
+    alert('Number of guests must be at least 1.');
+    return;
+  }
+
+  // Validate reservation date
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  const reservationDate = new Date(`${this.date}T00:00:00`);
+
+  if (Number.isNaN(reservationDate.getTime()) || reservationDate < today) {
+    alert('Please select today or a future date.');
+    return;
+  }
+
+  // Validate reservation time
+  if (!this.time) {
+    alert('Please select a reservation time.');
+    return;
+  }
+
+  // Validate table selection
+  if (!this.selectedTable) {
+    alert('Please select a table from the Tables page.');
+    return;
+  }
+
+  // All validations passed
+  const reservationDetails = {
+    name: this.name.trim(),
+    email: this.email.trim(),
+    phone: this.phone.trim(),
+    guests: Number(this.guests),
+    date: this.date,
+    time: this.time,
+    specialRequest: this.specialRequest,
+    selectedMenu: this.selectedMenu,
+    selectedTable: this.selectedTable
+  };
+
+  console.log('Reservation Details:', reservationDetails);
+
+  alert(
+    `Reservation confirmed for ${reservationDetails.name}!\n` +
+    `Selected Table: ${reservationDetails.selectedTable}`
+  );
+  }
 }
