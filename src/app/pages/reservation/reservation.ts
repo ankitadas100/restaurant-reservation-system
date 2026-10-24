@@ -1,11 +1,12 @@
 
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 import { TableSelection } from '../../services/table-selection';
 
 @Component({
   selector: 'app-reservation',
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './reservation.html',
   styleUrl: './reservation.css'
 })
@@ -30,12 +31,12 @@ export class Reservation {
     { name: 'Gulab Jamun', price: 100 }
   ];
 
-  // Get the table selected on the separate Tables page
+
   get selectedTable(): string {
     return this.tableSelection.selectedTable;
   }
 
-  // Select or deselect menu items
+ 
   toggleMenu(itemName: string) {
     if (this.selectedMenu.includes(itemName)) {
       this.selectedMenu = this.selectedMenu.filter(
@@ -46,7 +47,7 @@ export class Reservation {
     }
   }
 
-  // Confirm reservation
+ 
   confirmReservation() {
 
     const reservationDetails = {

@@ -1,90 +1,57 @@
-
 <section class="reservation-page">
 
-  <!-- Header -->
   <div class="reservation-header">
     <p>TABLEFLOW</p>
     <h1>Reserve Your Table</h1>
-    <span>
-      Book your table and enjoy an unforgettable dining experience.
-    </span>
+    <span>Book your table and enjoy an unforgettable dining experience.</span>
   </div>
 
-  <!-- Guest Information -->
   <div class="reservation-card">
-
     <h2>Guest Information</h2>
 
     <div class="form-grid">
-
       <div class="form-group">
         <label>Full Name</label>
-        <input
-          type="text"
-          placeholder="Enter your name"
-          [(ngModel)]="name">
+        <input type="text" placeholder="Enter your name" [(ngModel)]="name">
       </div>
 
       <div class="form-group">
         <label>Phone</label>
-        <input
-          type="tel"
-          placeholder="Enter your phone number"
-          [(ngModel)]="phone">
+        <input type="tel" placeholder="Enter your phone number" [(ngModel)]="phone">
       </div>
 
       <div class="form-group">
         <label>Email</label>
-        <input
-          type="email"
-          placeholder="Enter your email"
-          [(ngModel)]="email">
+        <input type="email" placeholder="Enter your email" [(ngModel)]="email">
       </div>
 
       <div class="form-group">
         <label>Number of Guests</label>
-        <input
-          type="number"
-          min="1"
-          [(ngModel)]="guests">
+        <input type="number" min="1" [(ngModel)]="guests">
       </div>
 
       <div class="form-group">
         <label>Date</label>
-        <input
-          type="date"
-          [(ngModel)]="date">
+        <input type="date" [(ngModel)]="date">
       </div>
 
       <div class="form-group">
         <label>Time</label>
-        <input
-          type="time"
-          [(ngModel)]="time">
+        <input type="time" [(ngModel)]="time">
       </div>
-
     </div>
 
     <div class="form-group full-width">
       <label>Special Request</label>
-      <textarea
-        placeholder="Any special request?"
-        [(ngModel)]="specialRequest">
-      </textarea>
+      <textarea placeholder="Any special request?" [(ngModel)]="specialRequest"></textarea>
     </div>
-
   </div>
 
-  <!-- Menu Selection -->
   <div class="reservation-card menu-section">
-
     <h2>Select Your Menu</h2>
-    <p class="section-description">
-      Choose your favourite dishes for your dining experience.
-    </p>
+    <p class="section-description">Choose your favourite dishes.</p>
 
     <div class="menu-grid">
-
       @for (item of menuItems; track item.name) {
         <button
           type="button"
@@ -108,94 +75,29 @@
           <span class="food-price">₹{{ item.price }}</span>
 
           <span class="select-label">
-            @if (selectedMenu.includes(item.name)) {
-              ✓ Selected
-            } @else {
-              + Select
-            }
+            {{ selectedMenu.includes(item.name) ? '✓ Selected' : '+ Select' }}
           </span>
-
         </button>
       }
-
     </div>
 
-    <p class="selection-summary">
-      {{ selectedMenu.length }} dish(es) selected
-    </p>
-
-  </div>
-  
-<!-- Table Selection -->
-<div class="reservation-card table-selection-section">
-
-  <h2>Select Your Table</h2>
-
-  <p class="section-description">
-    Choose a table according to your group size.
-  </p>
-
-  <div class="table-grid">
-
-    @for (table of tables; track table.number) {
-      <button
-        type="button"
-        class="table-card"
-        [class.selected]="selectedTable === table.number"
-        [class.reserved]="table.reserved"
-        [disabled]="table.reserved"
-        (click)="selectTable(table.number)">
-
-        <span class="table-circle">{{ table.number }}</span>
-
-        <span class="table-name">
-          Table {{ table.number }}
-        </span>
-
-        <span class="table-seats">
-          @if (table.reserved) {
-            Reserved
-          } @else {
-            {{ table.seats }} Seats
-          }
-        </span>
-
-        <span class="table-choice">
-          @if (table.reserved) {
-            Unavailable
-          } @else if (selectedTable === table.number) {
-            ✓ Selected
-          } @else {
-            + Select
-          }
-        </span>
-
-      </button>
-    }
-
+    <p class="selection-summary">{{ selectedMenu.length }} dish(es) selected</p>
   </div>
 
-  <p class="selection-summary">
+  <div class="reservation-card selected-table-summary">
+    <h2>Your Selected Table</h2>
+
     @if (selectedTable) {
-      Selected Table: {{ selectedTable }}
+      <p>Table <strong>{{ selectedTable }}</strong> selected.</p>
     } @else {
-      Please select a table.
+      <p>No table selected. Visit <a routerLink="/tables">Tables</a> to choose one.</p>
     }
-  </p>
+  </div>
 
-</div>
-
-
-  <!-- Confirmation -->
   <div class="confirm-section">
-
-    <button
-      type="button"
-      class="confirm-btn"
-      (click)="confirmReservation()">
+    <button type="button" class="confirm-btn" (click)="confirmReservation()">
       Confirm Reservation
     </button>
-
   </div>
 
 </section>
