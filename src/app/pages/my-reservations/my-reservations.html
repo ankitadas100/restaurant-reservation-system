@@ -1,0 +1,82 @@
+
+<section class="my-reservations">
+  <div class="page-header">
+    <p class="subtitle">TABLE FLOW</p>
+    <h1>My Reservations</h1>
+    <p class="description">
+      Manage your reservations and get ready for a memorable dining experience.
+    </p>
+  </div>
+
+  @if (reservations.length > 0) {
+    <div class="reservations-container">
+      @for (reservation of reservations; track $index) {
+        <div class="reservation-card">
+          <div class="card-header">
+            <h2>Reservation #{{ $index + 1 }}</h2>
+            <span class="status">Confirmed</span>
+          </div>
+
+          <div class="reservation-details">
+            <p><strong>Name:</strong> {{ reservation.name }}</p>
+            <p><strong>Email:</strong> {{ reservation.email }}</p>
+            <p><strong>Phone:</strong> {{ reservation.phone }}</p>
+            <p><strong>Guests:</strong> {{ reservation.guests }}</p>
+            <p><strong>Date:</strong> {{ reservation.date }}</p>
+            <p><strong>Time:</strong> {{ reservation.time }}</p>
+
+            @if (reservation.tableNumber || reservation.selectedTable) {
+              <p>
+                <strong>Table:</strong>
+                {{ reservation.tableNumber || reservation.selectedTable }}
+              </p>
+            }
+
+            @if (reservation.menuItems?.length) {
+              <div class="menu-details">
+                <strong>Selected Menu:</strong>
+                <ul>
+                  @for (item of reservation.menuItems; track $index) {
+                    <li>
+                      {{ typeof item === 'string' ? item : item.name }}
+                    </li>
+                  }
+                </ul>
+              </div>
+            }
+
+            @if (reservation.specialRequest) {
+              <p>
+                <strong>Special Request:</strong>
+                {{ reservation.specialRequest }}
+              </p>
+            }
+          </div>
+
+          <button
+            class="cancel-btn"
+            type="button"
+            (click)="cancelReservation($index)">
+            Cancel Reservation
+          </button>
+        </div>
+      }
+    </div>
+  } @else {
+   
+<div class="empty-state">
+  <div class="empty-icon">🍽️</div>
+
+  <h2>No Reservations Yet</h2>
+
+  <p>
+    You haven't made any reservations yet.
+    Book a table to get started!
+  </p>
+
+  <a routerLink="/reservation" class="book-btn">
+    Book a Table
+  </a>
+</div>
+}
+</section>

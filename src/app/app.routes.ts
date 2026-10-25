@@ -3,6 +3,7 @@ import { Routes } from '@angular/router';
 import { Home } from './pages/home/home';
 import { Reservation } from './pages/reservation/reservation';
 import { Tables } from './pages/tables/tables';
+import { MyReservations } from './pages/my-reservations/my-reservations';
 
 export const routes: Routes = [
   {
@@ -16,5 +17,9 @@ export const routes: Routes = [
   {
     path: 'tables',
     component: Tables
-  }
+  },
+  {
+  path: 'my-reservations',
+  component: MyReservations
+}
 ];
