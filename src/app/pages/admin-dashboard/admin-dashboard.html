@@ -1,0 +1,72 @@
+
+<section class="admin-dashboard">
+
+  <header class="dashboard-header">
+    <div>
+      <p class="subtitle">TABLE FLOW · ADMIN PANEL</p>
+      <h1>Reservation Dashboard</h1>
+      <p class="description">Manage restaurant reservations and customer bookings.</p>
+    </div>
+  </header>
+
+  <div class="stats-container">
+
+    <div class="stat-card">
+      <span class="stat-label">Total Reservations</span>
+      <h2>{{ reservations.length }}</h2>
+    </div>
+
+    <div class="stat-card">
+      <span class="stat-label">Total Guests</span>
+      <h2>{{ totalGuests }}</h2>
+    </div>
+
+  </div>
+
+  <section class="bookings-section">
+    <h2>All Reservations</h2>
+
+    @if (reservations.length > 0) {
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Customer</th>
+              <th>Phone</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Guests</th>
+              <th>Table</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            @for (reservation of reservations; track $index) {
+              <tr>
+                <td>{{ reservation.name || 'N/A' }}</td>
+                <td>{{ reservation.phone || 'N/A' }}</td>
+                <td>{{ reservation.date || 'N/A' }}</td>
+                <td>{{ reservation.time || 'N/A' }}</td>
+                <td>{{ reservation.guests || 0 }}</td>
+                <td>
+                  {{ reservation.tableNumber || reservation.selectedTable || 'N/A' }}
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+
+    } @else {
+
+      <div class="empty-state">
+        <h3>No Reservations Yet</h3>
+        <p>Customer bookings will appear here when reservations are available.</p>
+      </div>
+
+    }
+
+  </section>
+
+</section>
