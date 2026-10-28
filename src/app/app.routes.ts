@@ -5,6 +5,7 @@ import { Reservation } from './pages/reservation/reservation';
 import { Tables } from './pages/tables/tables';
 import { MyReservations } from './pages/my-reservations/my-reservations';
 import { AdminDashboard } from './pages/admin-dashboard/admin-dashboard';
+import { AdminLogin } from './pages/admin-login/admin-login';
 
 export const routes: Routes = [
   {
@@ -26,5 +27,8 @@ export const routes: Routes = [
 {
   path: 'admin',
   component: AdminDashboard
+},{
+  path: 'admin-login',
+  component: AdminLogin
 }
 ];

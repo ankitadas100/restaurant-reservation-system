@@ -1,0 +1,140 @@
+
+.admin-login-page {
+  min-height: 100vh;
+  padding: 50px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #062f2f;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 440px;
+  padding: 42px;
+  box-sizing: border-box;
+  background: #f5ead7;
+  border: 1px solid rgba(255, 157, 50, 0.3);
+  border-radius: 14px;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+
+.login-icon {
+  width: 62px;
+  height: 62px;
+  margin: 0 auto 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #062f2f;
+  border-radius: 50%;
+  color: #ff9d32;
+  font-size: 30px;
+}
+
+.login-subtitle {
+  margin: 0 0 12px;
+  color: #e98720;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.login-card h1 {
+  margin: 0;
+  color: #062f2f;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 34px;
+}
+
+.login-description {
+  margin: 14px 0 30px;
+  color: #64716a;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 9px;
+  color: #062f2f;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 14px;
+  box-sizing: border-box;
+  border: 1px solid #d8d2c5;
+  border-radius: 6px;
+  outline: none;
+  background: #fffdf8;
+  color: #062f2f;
+  font-size: 14px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: #ff9d32;
+  box-shadow: 0 0 0 3px rgba(255, 157, 50, 0.15);
+}
+
+.error-message {
+  margin: 0 0 18px;
+  color: #c0392b;
+  font-size: 13px;
+  text-align: left;
+  line-height: 1.5;
+}
+
+.login-btn {
+  width: 100%;
+  margin-top: 8px;
+  padding: 15px;
+  border: none;
+  border-radius: 6px;
+  background: #ff9d32;
+  color: #172b26;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(255, 157, 50, 0.2);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.login-btn:hover {
+  background: #ffb45c;
+  transform: translateY(-2px);
+}
+
+.back-home {
+  display: inline-block;
+  margin-top: 25px;
+  color: #062f2f;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.back-home:hover {
+  color: #e98720;
+}
+
+@media (max-width: 480px) {
+  .login-card {
+    padding: 30px 22px;
+  }
+
+  .login-card h1 {
+    font-size: 29px;
+  }
+}

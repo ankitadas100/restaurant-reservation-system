@@ -1,0 +1,59 @@
+
+<section class="admin-login-page">
+
+  <div class="login-card">
+
+    <div class="login-icon">♜</div>
+
+    <p class="login-subtitle">TABLE FLOW · ADMIN PANEL</p>
+
+    <h1>Welcome Back</h1>
+
+    <p class="login-description">
+      Sign in to manage restaurant reservations.
+    </p>
+
+    <form (ngSubmit)="login()" #loginForm="ngForm">
+
+      <div class="form-group">
+        <label for="email">Admin Email</label>
+
+        <input
+          type="email"
+          id="email"
+          name="email"
+          [(ngModel)]="email"
+          placeholder="Enter admin email"
+          required
+          email
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+
+        <input
+          type="password"
+          id="password"
+          name="password"
+          [(ngModel)]="password"
+          placeholder="Enter password"
+          required
+        />
+      </div>
+
+      @if (errorMessage) {
+        <p class="error-message">{{ errorMessage }}</p>
+      }
+
+      <button type="submit" class="login-btn">
+        Sign In to Dashboard
+      </button>
+
+    </form>
+
+    <a routerLink="/" class="back-home">← Back to Home</a>
+
+  </div>
+
+</section>
