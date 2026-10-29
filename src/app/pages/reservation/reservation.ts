@@ -45,7 +45,6 @@ export class Reservation {
     }
   }
 
-  // Save reservation details in localStorage
   saveReservation(reservation: object) {
     const savedReservations = JSON.parse(
       localStorage.getItem('reservations') || '[]'
@@ -61,7 +60,6 @@ export class Reservation {
 
   confirmReservation() {
 
-    // Check required fields
     if (
       !this.name.trim() ||
       !this.email.trim() ||
@@ -73,7 +71,7 @@ export class Reservation {
       return;
     }
 
-    // Validate email
+  
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!emailRegex.test(this.email.trim())) {
@@ -81,7 +79,6 @@ export class Reservation {
       return;
     }
 
-    // Validate Indian mobile number
     const phoneRegex = /^[6-9]\d{9}$/;
 
     if (!phoneRegex.test(this.phone.trim())) {
@@ -89,7 +86,7 @@ export class Reservation {
       return;
     }
 
-    // Validate number of guests
+    
     if (
       !Number.isInteger(Number(this.guests)) ||
       Number(this.guests) < 1
@@ -98,7 +95,6 @@ export class Reservation {
       return;
     }
 
-    // Validate reservation date
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 
