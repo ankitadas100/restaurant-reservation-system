@@ -7,7 +7,7 @@
   font-family: Arial, sans-serif;
 }
 
-/* Page Header */
+
 .page-header {
   text-align: center;
   margin-bottom: 50px;
@@ -35,7 +35,7 @@
   line-height: 1.7;
 }
 
-/* Reservations Layout */
+
 .reservations-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -44,7 +44,7 @@
   margin: 0 auto;
 }
 
-/* Reservation Card */
+
 .reservation-card {
   padding: 28px;
   background: #ffffff;
@@ -84,7 +84,7 @@
   font-weight: 700;
 }
 
-/* Reservation Details */
+
 .reservation-details p {
   margin: 13px 0;
   color: #59645e;
@@ -109,7 +109,7 @@
   line-height: 1.9;
 }
 
-/* Cancel Button */
+
 .cancel-btn {
   width: 100%;
   margin-top: 20px;
