@@ -256,7 +256,7 @@
   flex-shrink: 0;
 }
 
-/* Table Information */
+
 
 .table-info h3 {
   margin: 0 0 5px;
@@ -271,7 +271,6 @@
   font-size: 12px;
 }
 
-/* Available Hover */
 
 .table-card.available:hover {
   border-color: #ff9d32;
@@ -284,7 +283,7 @@
   color: #172b26;
 }
 
-/* Reserved */
+
 
 .table-card.reserved {
   opacity: 0.45;
@@ -297,7 +296,7 @@
   color: #778582;
 }
 
-/* Legend */
+
 
 .table-legend {
   display: flex;
@@ -338,7 +337,7 @@
   background: #f5ead7;
 }
 
-/* Responsive */
+
 
 @media (max-width: 700px) {
 
@@ -352,7 +351,7 @@
   }
 }
 
-/* Menu Selection */
+
 
 .menu-section {
   margin-top: 28px;
