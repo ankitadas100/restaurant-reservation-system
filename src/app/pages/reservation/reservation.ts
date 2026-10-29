@@ -108,19 +108,19 @@ export class Reservation {
       return;
     }
 
-    // Validate reservation time
+   
     if (!this.time) {
       alert('Please select a reservation time.');
       return;
     }
 
-    // Validate table selection
+   
     if (!this.selectedTable) {
       alert('Please select a table from the Tables page.');
       return;
     }
 
-    // Prepare reservation details
+   
     const reservationDetails = {
       name: this.name.trim(),
       email: this.email.trim(),
