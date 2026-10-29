@@ -7,7 +7,7 @@
   font-family: Arial, sans-serif;
 }
 
-/* Dashboard Header */
+
 .dashboard-header {
   display: flex;
   justify-content: space-between;
@@ -37,7 +37,7 @@
   line-height: 1.7;
 }
 
-/* Statistics Cards */
+
 .stats-container {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
